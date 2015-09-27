@@ -1,0 +1,16 @@
+{
+  "name": "node-redis",
+  "version": "1.0.0",
+  "description": "A demo showing how to use node and redis as a cache solution",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "kylesiler",
+  "license": "ISC",
+  "devDependencies": {
+    "hapi": "^10.1.0",
+    "http": "0.0.0",
+    "redis": "^2.0.1"
+  }
+}
