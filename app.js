@@ -2,6 +2,7 @@
 
 var hapi = require('hapi');
 var server = new hapi.Server();
+var weather = require('./weather.js');
 
 server.connection( {
   host: 'localhost',
@@ -14,7 +15,7 @@ server.route({
   handler: function (request, reply) {
     console.log("Getting weather for " + request.params.zip);
 
-    reply("Future endpoint to get weather for " + request.params.zip);
+    weather.retrieveByZip(request, reply, request.params.zip);
   }
 });
 
@@ -23,7 +24,7 @@ server.route({
   method: 'POST',
   handler: function(request, reply) {
     console.log("Clearing cache");
-    reply("Cleared cache");
+    weather.clearCache(request, reply);
   }
 });
 
